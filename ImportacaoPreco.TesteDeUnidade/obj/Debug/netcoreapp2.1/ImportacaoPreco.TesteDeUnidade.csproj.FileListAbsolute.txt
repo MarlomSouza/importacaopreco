@@ -1,0 +1,17 @@
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.csprojAssemblyReference.cache
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.csproj.CoreCompileInputs.cache
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.AssemblyInfoInputs.cache
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.AssemblyInfo.cs
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.deps.json
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.runtimeconfig.json
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.runtimeconfig.dev.json
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.pdb
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.Dominio.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\bin\Debug\netcoreapp2.1\ImportacaoPreco.Dominio.pdb
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.csproj.CopyComplete
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.TesteDeUnidade\obj\Debug\netcoreapp2.1\ImportacaoPreco.TesteDeUnidade.pdb

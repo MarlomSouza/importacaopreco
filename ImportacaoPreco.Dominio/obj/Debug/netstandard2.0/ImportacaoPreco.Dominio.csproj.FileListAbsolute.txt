@@ -1,0 +1,9 @@
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\bin\Debug\netstandard2.0\ImportacaoPreco.Dominio.deps.json
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\bin\Debug\netstandard2.0\ImportacaoPreco.Dominio.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\bin\Debug\netstandard2.0\ImportacaoPreco.Dominio.pdb
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\obj\Debug\netstandard2.0\ImportacaoPreco.Dominio.csprojAssemblyReference.cache
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\obj\Debug\netstandard2.0\ImportacaoPreco.Dominio.csproj.CoreCompileInputs.cache
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\obj\Debug\netstandard2.0\ImportacaoPreco.Dominio.AssemblyInfoInputs.cache
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\obj\Debug\netstandard2.0\ImportacaoPreco.Dominio.AssemblyInfo.cs
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\obj\Debug\netstandard2.0\ImportacaoPreco.Dominio.dll
+c:\Users\f.stevanatto\Documents\Projetos\importacaopreco\ImportacaoPreco.Dominio\obj\Debug\netstandard2.0\ImportacaoPreco.Dominio.pdb
