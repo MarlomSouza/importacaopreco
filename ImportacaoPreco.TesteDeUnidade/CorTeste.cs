@@ -12,8 +12,6 @@ namespace ImportacaoPreco.TesteDeUnidade
         [InlineData("Azul")]
         public void DeveCriarCorComNome(string nome)
         {
-            //Given
-
             //When
             var cor = new Cor(nome);
             //Then
