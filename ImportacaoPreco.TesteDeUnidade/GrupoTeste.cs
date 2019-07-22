@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using ImportacaoPreco.Dominio;
+using ImportacaoPreco.Dominio.Entity;
 using Xunit;
 
 namespace ImportacaoPreco.TesteDeUnidade
@@ -35,6 +35,19 @@ namespace ImportacaoPreco.TesteDeUnidade
             var mensagem = Assert.Throws<ArgumentException>(testCode).Message;
             Assert.Equal("Nome do Grupo inválido", mensagem);
         }
-        
+
+        [Fact]
+        public void DeveAdicionarSubGruposAoGrupo()
+        {
+            //Given
+            var subgrupo = new Subgrupo("Chuteira");
+            var subgruposEsperados = new List<Subgrupo>() { subgrupo };
+            var grupo = new Grupo("Calçados");
+            //When
+            grupo.AdicionaSubgrupo(subgrupo);
+            //Then  
+            Assert.Equal(subgruposEsperados, grupo.Subgrupo);
+        }
+
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ImportacaoPreco.Dominio
+namespace ImportacaoPreco.Dominio.Entity
 {
     public class Grupo
     {

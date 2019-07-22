@@ -1,15 +1,14 @@
 using System;
 
-namespace ImportacaoPreco.Dominio
+namespace ImportacaoPreco.Dominio.Entity
 {
     public class Cor
     {
         public Cor(string nome)
         {
-            if(String.IsNullOrWhiteSpace(nome))
-            {
+            if (string.IsNullOrWhiteSpace(nome))
                 throw new ArgumentException("Nome da Cor invalida");
-            }
+
             Nome = nome;
         }
 

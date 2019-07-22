@@ -1,6 +1,6 @@
 using System;
 
-namespace ImportacaoPreco.Dominio
+namespace ImportacaoPreco.Dominio.Entity
 {
     public class Tamanho
     {

@@ -1,4 +1,4 @@
-namespace ImportacaoPreco.Dominio
+namespace ImportacaoPreco.Dominio.Entity
 {
     public class Subgrupo
     {
