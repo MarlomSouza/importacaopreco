@@ -40,9 +40,9 @@ namespace ImportacaoPreco.TesteDeUnidade
         public void DeveAdicionarSubGruposAoGrupo()
         {
             //Given
-            var subgrupo = new Subgrupo("Chuteira");
-            var subgruposEsperados = new List<Subgrupo>() { subgrupo };
             var grupo = new Grupo("Calçados");
+            var subgrupo = new Subgrupo("Chuteira", grupo);
+            var subgruposEsperados = new List<Subgrupo>() { subgrupo };
             //When
             grupo.AdicionaSubgrupo(subgrupo);
             //Then  

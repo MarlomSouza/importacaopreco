@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ImportacaoPreco.Dominio.VO;
 
 namespace ImportacaoPreco.Dominio.Entity
@@ -5,17 +6,17 @@ namespace ImportacaoPreco.Dominio.Entity
     public class Produto
     {
         public readonly string Nome;
-        public readonly Cor Cor;
-        public readonly Subgrupo Subgrupo;
-        public readonly Tamanho Tamanho;
+        public readonly IEnumerable<Cor> Cores;
+        public readonly IEnumerable<Subgrupo> Subgrupos;
+        public readonly IEnumerable<Tamanho> Tamanhos;
         public readonly Preco Preco;
 
-        public Produto(string nome, Tamanho tamanho, Cor cor, Subgrupo subgrupo, Preco preco)
+        public Produto(string nome, IEnumerable<Tamanho> tamanhos, IEnumerable<Cor> cores, IEnumerable<Subgrupo> subgrupos, Preco preco)
         {
             Nome = nome;
-            Tamanho = tamanho;
-            Cor = cor;
-            Subgrupo = subgrupo;
+            Tamanhos = tamanhos;
+            Cores = cores;
+            Subgrupos = subgrupos;
             Preco = preco;
         }
     }
