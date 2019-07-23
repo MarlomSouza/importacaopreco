@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using ImportacaoPreco.Dominio.Entity;
+using ImportacaoPreco.Dominio.Entities;
 using Xunit;
 
 namespace ImportacaoPreco.TesteDeUnidade

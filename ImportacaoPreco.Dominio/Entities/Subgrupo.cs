@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
-namespace ImportacaoPreco.Dominio.Entity
+namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Subgrupo
+    public class Subgrupo : Entity
     {
         public readonly string Nome;
         public readonly Grupo Grupo;

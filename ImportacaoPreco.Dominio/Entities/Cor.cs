@@ -1,8 +1,8 @@
 using System;
 
-namespace ImportacaoPreco.Dominio.Entity
+namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Cor
+    public class Cor : Entity
     {
         public Cor(string nome)
         {

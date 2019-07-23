@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using ImportacaoPreco.Dominio.VO;
 
-namespace ImportacaoPreco.Dominio.Entity
+namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Produto
+    public class Produto : Entity
     {
         public readonly string Nome;
         public readonly IEnumerable<Cor> Cores;

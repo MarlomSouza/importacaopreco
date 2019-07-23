@@ -1,8 +1,8 @@
 using System;
 
-namespace ImportacaoPreco.Dominio.Entity
+namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Tamanho
+    public class Tamanho : Entity
     {
         public string Nome { get; }
         public Tamanho(string nome)

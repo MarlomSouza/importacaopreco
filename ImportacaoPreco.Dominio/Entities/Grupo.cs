@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace ImportacaoPreco.Dominio.Entity
+namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Grupo
+    public class Grupo : Entity
     {
         public string Nome { get; private set; }
         public List<Subgrupo> Subgrupo { get; private set; }
