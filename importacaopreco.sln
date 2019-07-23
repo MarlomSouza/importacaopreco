@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportacaoPreco.UI", "Impor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportacaoPreco.Aplicacao", "ImportacaoPreco.Aplicacao\ImportacaoPreco.Aplicacao.csproj", "{E2E575E8-B860-45C2-B6C3-98F78602ADBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportacaoPreco.Persistence", "ImportacaoPreco.Persistence\ImportacaoPreco.Persistence.csproj", "{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{E2E575E8-B860-45C2-B6C3-98F78602ADBD}.Release|x64.Build.0 = Release|Any CPU
 		{E2E575E8-B860-45C2-B6C3-98F78602ADBD}.Release|x86.ActiveCfg = Release|Any CPU
 		{E2E575E8-B860-45C2-B6C3-98F78602ADBD}.Release|x86.Build.0 = Release|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Debug|x64.Build.0 = Debug|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Debug|x86.Build.0 = Debug|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Release|x64.ActiveCfg = Release|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Release|x64.Build.0 = Release|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Release|x86.ActiveCfg = Release|Any CPU
+		{E1BCC2FD-0FFC-4F7D-8BEC-ACF66D25B16B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

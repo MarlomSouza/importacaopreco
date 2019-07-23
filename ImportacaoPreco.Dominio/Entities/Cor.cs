@@ -2,7 +2,7 @@ using System;
 
 namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Cor : Entity
+    public class Cor : Entity<Cor>
     {
         public Cor(string nome)
         {

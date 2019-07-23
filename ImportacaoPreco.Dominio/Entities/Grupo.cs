@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Grupo : Entity
+    public class Grupo : Entity<Grupo>
     {
         public string Nome { get; private set; }
         public List<Subgrupo> Subgrupo { get; private set; }

@@ -1,6 +1,6 @@
 namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Subgrupo : Entity
+    public class Subgrupo : Entity<Subgrupo>
     {
         public readonly string Nome;
         public readonly Grupo Grupo;

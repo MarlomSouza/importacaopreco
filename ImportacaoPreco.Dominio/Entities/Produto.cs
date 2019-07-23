@@ -3,7 +3,7 @@ using ImportacaoPreco.Dominio.VO;
 
 namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Produto : Entity
+    public class Produto : Entity<Produto>
     {
         public readonly string Nome;
         public readonly IEnumerable<Cor> Cores;

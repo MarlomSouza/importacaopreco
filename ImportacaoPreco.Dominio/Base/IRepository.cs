@@ -3,7 +3,7 @@ using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.Dominio.Base
 {
-    public interface IRepository<TEntidade> where TEntidade : Entity
+    public interface IRepository<TEntidade> where TEntidade : Entity<TEntidade>
     {
         TEntidade ObterPorId(int id);
         IEnumerable<TEntidade> Listar();
