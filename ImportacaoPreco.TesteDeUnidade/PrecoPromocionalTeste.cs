@@ -11,8 +11,8 @@ namespace ImportacaoPreco.TesteDeUnidade
         {
             //Given
             var valor = 10;
-            var dataInicioPromocao = new DateTime(2019, 07, 19);
-            var dataFimPromocao = new DateTime(2019, 07, 25);
+            var dataInicioPromocao = DateTime.Now;
+            var dataFimPromocao = DateTime.Now.AddDays(7);
             //When
             var precoPromocional = new PrecoPromocional(valor, dataInicioPromocao, dataFimPromocao);
             //Then
@@ -26,8 +26,8 @@ namespace ImportacaoPreco.TesteDeUnidade
         {
             //Given
             var valor = -10;
-            var dataInicioPromocao = new DateTime(2019,07,19);
-            var dataFimPromocao = new DateTime(2019,07,25);
+            var dataInicioPromocao = DateTime.Now;
+            var dataFimPromocao = DateTime.Now.AddDays(7);
             //When
             Action act = () => new PrecoPromocional(valor, dataInicioPromocao, dataFimPromocao);
             //Then
@@ -39,8 +39,8 @@ namespace ImportacaoPreco.TesteDeUnidade
         {
         //Given
         var valor = 10;
-        var dataInicioPromocao = new DateTime(2020,07,21);
-        var dataFimPromocao = new DateTime(2020,07,19);
+        var dataInicioPromocao = DateTime.Now;
+        var dataFimPromocao = DateTime.Now.AddDays(-10);
         //When
         Action act = () => new PrecoPromocional(valor, dataInicioPromocao, dataFimPromocao);
         //Then
