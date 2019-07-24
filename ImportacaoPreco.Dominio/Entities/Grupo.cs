@@ -7,6 +7,9 @@ namespace ImportacaoPreco.Dominio.Entities
     {
         public string Nome { get; private set; }
         public List<Subgrupo> Subgrupo { get; private set; }
+
+        protected Grupo() { }
+        
         public Grupo(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))

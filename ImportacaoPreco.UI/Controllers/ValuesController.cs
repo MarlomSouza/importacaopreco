@@ -25,6 +25,7 @@ namespace ImportacaoPreco.UI.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            var valor = value;
         }
 
         // PUT api/values/5

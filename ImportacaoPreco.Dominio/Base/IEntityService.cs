@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.Dominio.Base
@@ -9,5 +10,9 @@ namespace ImportacaoPreco.Dominio.Base
         void Criar(T entity);
 
         T ObterPorId(int id);
+
+        IEnumerable<T> ObterTodos();
+
+        void Remover(int id);
     }
 }

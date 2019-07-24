@@ -4,11 +4,12 @@ namespace ImportacaoPreco.Dominio.Entities
     {
         public readonly string Nome;
         public readonly Grupo Grupo;
+
+        protected Subgrupo() { }
         public Subgrupo(string nome, Grupo grupo)
         {
             Nome = nome;
             Grupo = grupo;
-
         }
 
     }

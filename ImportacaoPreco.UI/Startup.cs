@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ImportacaoPreco.Aplicacao;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
-using ImportacaoPreco.Dominio.VO;
 using ImportacaoPreco.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace ImportacaoPreco.UI
 {
@@ -39,6 +32,8 @@ namespace ImportacaoPreco.UI
             services.AddScoped(typeof(IRepository<Tamanho>), typeof(Repository<Tamanho>));
             services.AddScoped(typeof(IRepository<Subgrupo>), typeof(Repository<Subgrupo>));
             services.AddScoped(typeof(IRepository<Grupo>), typeof(Repository<Grupo>));
+            services.AddScoped(typeof(IEntityService<Produto>), typeof(ProdutoService));
+            services.AddScoped(typeof(IEntityService<Cor>), typeof(CorService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

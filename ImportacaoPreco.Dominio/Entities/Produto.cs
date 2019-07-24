@@ -11,6 +11,8 @@ namespace ImportacaoPreco.Dominio.Entities
         public readonly IEnumerable<Tamanho> Tamanhos;
         public readonly Preco Preco;
 
+        protected Produto() { }
+
         public Produto(string nome, IEnumerable<Tamanho> tamanhos, IEnumerable<Cor> cores, Subgrupo subgrupo, Preco preco)
         {
             Nome = nome;

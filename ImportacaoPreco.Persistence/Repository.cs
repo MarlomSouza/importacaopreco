@@ -26,12 +26,6 @@ namespace ImportacaoPreco.Persistence
             _context.SaveChanges();
         }
 
-        public IEnumerable<TEntity> Listar()
-        {
-            var entidades = _context.Set<TEntity>().ToList();
-            return entidades.Any() ? entidades : new List<TEntity>();
-        }
-
         public TEntity ObterPorId(int id)
         {
             var query = _context.Set<TEntity>().Where(entity => entity.Id == id);
@@ -44,9 +38,10 @@ namespace ImportacaoPreco.Persistence
             _context.SaveChanges();
         }
 
-        IEnumerable<TEntity> IRepository<TEntity>.Listar()
+        public IEnumerable<TEntity> ObterTodos()
         {
-            throw new System.NotImplementedException();
+            var entidades = _context.Set<TEntity>().ToList();
+            return entidades.Any() ? entidades : new List<TEntity>();
         }
     }
 }

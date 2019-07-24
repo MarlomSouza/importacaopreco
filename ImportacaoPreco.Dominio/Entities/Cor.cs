@@ -4,6 +4,8 @@ namespace ImportacaoPreco.Dominio.Entities
 {
     public class Cor : Entity<Cor>
     {
+
+        protected Cor() { }
         public Cor(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
