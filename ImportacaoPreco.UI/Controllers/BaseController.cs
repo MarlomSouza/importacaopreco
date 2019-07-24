@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ImportacaoPreco.Dominio.Base;
+using ImportacaoPreco.Aplicacao.Services;
 using ImportacaoPreco.Dominio.Entities;
 using Microsoft.AspNetCore.Mvc;
 

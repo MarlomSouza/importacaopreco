@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using ImportacaoPreco.Dominio.Entities;
 
-namespace ImportacaoPreco.Dominio.Base
+namespace ImportacaoPreco.Aplicacao.Services
 {
     public interface IEntityService<T> where T : Entity<T>
     {
