@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ImportacaoPreco.Aplicacao\ImportacaoPreco.Aplicacao.csproj" />
+    <ProjectReference Include="..\ImportacaoPreco.Persistence\ImportacaoPreco.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

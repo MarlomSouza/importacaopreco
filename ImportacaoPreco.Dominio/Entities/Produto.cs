@@ -7,16 +7,16 @@ namespace ImportacaoPreco.Dominio.Entities
     {
         public readonly string Nome;
         public readonly IEnumerable<Cor> Cores;
-        public readonly IEnumerable<Subgrupo> Subgrupos;
+        public readonly Subgrupo Subgrupo;
         public readonly IEnumerable<Tamanho> Tamanhos;
         public readonly Preco Preco;
 
-        public Produto(string nome, IEnumerable<Tamanho> tamanhos, IEnumerable<Cor> cores, IEnumerable<Subgrupo> subgrupos, Preco preco)
+        public Produto(string nome, IEnumerable<Tamanho> tamanhos, IEnumerable<Cor> cores, Subgrupo subgrupo, Preco preco)
         {
             Nome = nome;
             Tamanhos = tamanhos;
             Cores = cores;
-            Subgrupos = subgrupos;
+            Subgrupo = subgrupo;
             Preco = preco;
         }
     }

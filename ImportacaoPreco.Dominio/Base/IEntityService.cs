@@ -6,6 +6,8 @@ namespace ImportacaoPreco.Dominio.Base
     {
         void Criar(string nome);
 
+        void Criar(T entity);
+
         T ObterPorId(int id);
     }
 }

@@ -9,7 +9,7 @@ namespace ImportacaoPreco.Aplicacao
         {
         }
 
-        public void Criar(string nome)
+        public override void Criar(string nome)
         {
             var cor = new Cor(nome);
             Criar(cor);

@@ -14,7 +14,7 @@ namespace ImportacaoPreco.TesteDeUnidade
             var grupo = new Grupo("Sapato");
             var cor = new Cor[] { new Cor("Verde"), new Cor("Preto") };
             var tamanho = new Tamanho[] { new Tamanho("grande"), new Tamanho("Pequeno") };
-            var subgrupo = new Subgrupo[] { new Subgrupo("Tenis", grupo), new Subgrupo("Chinelo", grupo) };
+            var subgrupo = new Subgrupo("Tenis", grupo);
             var preco = new Preco(10);
             //When
             var produto = new Produto(nome, tamanho, cor, subgrupo, preco);
@@ -23,7 +23,7 @@ namespace ImportacaoPreco.TesteDeUnidade
             Assert.Equal(preco, produto.Preco);
             Assert.Equal(cor, produto.Cores);
             Assert.Equal(tamanho, produto.Tamanhos);
-            Assert.Equal(subgrupo, produto.Subgrupos);
+            Assert.Equal(subgrupo, produto.Subgrupo);
         }
 
         [Fact]

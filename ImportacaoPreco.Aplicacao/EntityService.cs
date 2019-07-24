@@ -3,14 +3,16 @@ using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.Aplicacao
 {
-    public abstract class EntityService<TEntity> : IEntityService<Grupo>  where TEntity : Entity<TEntity>
+    public abstract class EntityService<TEntity> : IEntityService<TEntity> where TEntity : Entity<TEntity>
     {
         private readonly IRepository<TEntity> _repository;
 
         public EntityService(IRepository<TEntity> repository) => _repository = repository;
 
-        protected void Criar(TEntity entity) => _repository.Adicionar(entity);
+        public abstract void Criar(string nome);
 
-        protected TEntity ObterPorId(int id) => _repository.ObterPorId(id);
+        public void Criar(TEntity entity) => _repository.Adicionar(entity);
+
+        public TEntity ObterPorId(int id) => _repository.ObterPorId(id);
     }
 }

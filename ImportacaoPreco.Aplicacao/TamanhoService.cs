@@ -5,11 +5,9 @@ namespace ImportacaoPreco.Aplicacao
 {
     public class TamanhoService : EntityService<Tamanho>, IEntityService<Tamanho>
     {
-        public TamanhoService(IRepository<Tamanho> repository) : base(repository)
-        {
-        }
+        public TamanhoService(IRepository<Tamanho> repository) : base(repository) { }
 
-        public void Criar(string nome)
+        public override void Criar(string nome)
         {
             var tamanho = new Tamanho(nome);
             Criar(tamanho);

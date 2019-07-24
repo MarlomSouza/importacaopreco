@@ -7,7 +7,7 @@ namespace ImportacaoPreco.Aplicacao
     {
         public GrupoService(IRepository<Grupo> repository) : base(repository) { }
 
-        public void Criar(string nome)
+        public override void Criar(string nome)
         {
             var grupo = new Grupo(nome);
             Criar(grupo);
