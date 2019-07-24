@@ -4,8 +4,8 @@ namespace ImportacaoPreco.Dominio.Entities
 {
     public class Cor : Entity<Cor>
     {
-
         protected Cor() { }
+
         public Cor(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
@@ -13,7 +13,5 @@ namespace ImportacaoPreco.Dominio.Entities
 
             Nome = nome;
         }
-
-        public string Nome { get; set; }
     }
 }

@@ -1,20 +1,11 @@
 using ImportacaoPreco.Aplicacao.Dtos;
 using ImportacaoPreco.Aplicacao.Services;
 using ImportacaoPreco.Dominio.Entities;
-using Microsoft.AspNetCore.Mvc;
 
 namespace ImportacaoPreco.UI.Controllers
 {
-    public class GruposController : BaseController<Grupo>
+    public class GruposController : BaseController<Grupo, GrupoDto>
     {
-        public GruposController(IEntityService<Grupo> service) : base(service)
-        {
-        }
-
-        [HttpPost]
-        public void Post([FromBody] GrupoDto grupo)
-        {
-            _service.Criar(grupo.Nome);
-        }
+        public GruposController(IEntityService<Grupo, GrupoDto> service) : base(service) { }
     }
 }

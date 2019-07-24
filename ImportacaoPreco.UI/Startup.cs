@@ -1,4 +1,5 @@
 ﻿using ImportacaoPreco.Aplicacao;
+using ImportacaoPreco.Aplicacao.Dtos;
 using ImportacaoPreco.Aplicacao.Services;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
@@ -33,8 +34,12 @@ namespace ImportacaoPreco.UI
             services.AddScoped(typeof(IRepository<Tamanho>), typeof(Repository<Tamanho>));
             services.AddScoped(typeof(IRepository<Subgrupo>), typeof(Repository<Subgrupo>));
             services.AddScoped(typeof(IRepository<Grupo>), typeof(Repository<Grupo>));
-            services.AddScoped(typeof(IEntityService<Produto>), typeof(ProdutoService));
-            services.AddScoped(typeof(IEntityService<Cor>), typeof(CorService));
+
+            services.AddScoped(typeof(IEntityService<Produto, ProdutoDto>), typeof(ProdutoService));
+            services.AddScoped(typeof(IEntityService<Cor, CorDto>), typeof(CorService));
+            services.AddScoped(typeof(IEntityService<Tamanho, TamanhoDto>), typeof(TamanhoService));
+            services.AddScoped(typeof(IEntityService<Grupo, GrupoDto>), typeof(GrupoService));
+            services.AddScoped(typeof(IEntityService<Subgrupo, SubgrupoDto>), typeof(SubgrupoService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

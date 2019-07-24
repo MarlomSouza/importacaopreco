@@ -2,8 +2,7 @@ namespace ImportacaoPreco.Dominio.Entities
 {
     public class Subgrupo : Entity<Subgrupo>
     {
-        public readonly string Nome;
-        public readonly Grupo Grupo;
+        public Grupo Grupo { get; private set; }
 
         protected Subgrupo() { }
         public Subgrupo(string nome, Grupo grupo)

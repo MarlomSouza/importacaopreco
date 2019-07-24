@@ -5,17 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ImportacaoPreco.UI.Controllers
 {
-    public class SubGruposController : BaseController<Subgrupo>
+    public class SubGruposController : BaseController<Subgrupo, SubgrupoDto>
     {
-        public SubGruposController(IEntityService<Subgrupo> service) : base(service)
-        {
-        }
-
-
-        [HttpPost]
-        public void Post([FromBody] SubgrupoDto subgrupo)
-        {
-            _service.Criar(subgrupo.Nome);
-        }
+        public SubGruposController(IEntityService<Subgrupo, SubgrupoDto> service) : base(service) { }
     }
 }

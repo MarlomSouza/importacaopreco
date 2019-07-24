@@ -4,8 +4,9 @@ using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.UI.Controllers
 {
-    public class CoresController : BaseController<Cor, CorDto>
+
+    public class ProdutosController : BaseController<Produto, ProdutoDto>
     {
-        public CoresController(IEntityService<Cor, CorDto> service) : base(service) { }
+        public ProdutosController(IEntityService<Produto, ProdutoDto> service) : base(service) { }
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using ImportacaoPreco.Aplicacao.Dtos;
 using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.Aplicacao.Services
 {
-    public interface IEntityService<T> where T : Entity<T>
+    public interface IEntityService<T, TDto> where T : Entity<T> where TDto : Dto
     {
-        void Criar(string nome);
+        void Criar(TDto entityDto);
 
         void Criar(T entity);
 

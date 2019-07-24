@@ -51,6 +51,8 @@ namespace ImportacaoPreco.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Nome");
+
                     b.HasKey("Id");
 
                     b.ToTable("Produtos");
@@ -63,6 +65,8 @@ namespace ImportacaoPreco.Persistence.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("GrupoId");
+
+                    b.Property<string>("Nome");
 
                     b.HasKey("Id");
 
@@ -77,6 +81,8 @@ namespace ImportacaoPreco.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Nome");
+
                     b.HasKey("Id");
 
                     b.ToTable("Tamanhos");
@@ -84,7 +90,7 @@ namespace ImportacaoPreco.Persistence.Migrations
 
             modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Subgrupo", b =>
                 {
-                    b.HasOne("ImportacaoPreco.Dominio.Entities.Grupo")
+                    b.HasOne("ImportacaoPreco.Dominio.Entities.Grupo", "Grupo")
                         .WithMany("Subgrupo")
                         .HasForeignKey("GrupoId");
                 });

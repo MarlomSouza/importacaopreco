@@ -1,16 +1,22 @@
+using System;
 using System.Collections.Generic;
+using ImportacaoPreco.Aplicacao.Dtos;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.Aplicacao.Services
 {
-    public abstract class EntityService<TEntity> : IEntityService<TEntity> where TEntity : Entity<TEntity>
+    public abstract class EntityService<TEntity, TDto> : IEntityService<TEntity, TDto> where TEntity : Entity<TEntity> where TDto : Dto
     {
         private readonly IRepository<TEntity> _repository;
 
         public EntityService(IRepository<TEntity> repository) => _repository = repository;
 
-        public abstract void Criar(string nome);
+        public virtual void Criar(TDto entityDto)
+        {
+            var entidade = (TEntity)Activator.CreateInstance(typeof(TEntity), entityDto.Nome);
+            Criar(entidade);
+        }
 
         public void Criar(TEntity entity) => _repository.Adicionar(entity);
 
@@ -23,5 +29,6 @@ namespace ImportacaoPreco.Aplicacao.Services
             var entidade = ObterPorId(id);
             _repository.Remover(entidade);
         }
+
     }
 }
