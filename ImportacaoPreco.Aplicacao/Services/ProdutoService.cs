@@ -3,7 +3,7 @@ using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 using ImportacaoPreco.Dominio.VO;
 
-namespace ImportacaoPreco.Aplicacao
+namespace ImportacaoPreco.Aplicacao.Services
 {
     public class ProdutoService : EntityService<Produto>, IEntityService<Produto>
     {

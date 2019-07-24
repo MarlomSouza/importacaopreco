@@ -1,7 +1,7 @@
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 
-namespace ImportacaoPreco.Aplicacao
+namespace ImportacaoPreco.Aplicacao.Services
 {
     public class CorService : EntityService<Cor>, IEntityService<Cor>
     {

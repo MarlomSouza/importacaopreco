@@ -1,4 +1,5 @@
 ﻿using ImportacaoPreco.Aplicacao;
+using ImportacaoPreco.Aplicacao.Services;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 using ImportacaoPreco.Persistence;

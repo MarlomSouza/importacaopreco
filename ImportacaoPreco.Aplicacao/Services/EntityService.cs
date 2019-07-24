@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 
-namespace ImportacaoPreco.Aplicacao
+namespace ImportacaoPreco.Aplicacao.Services
 {
     public abstract class EntityService<TEntity> : IEntityService<TEntity> where TEntity : Entity<TEntity>
     {
