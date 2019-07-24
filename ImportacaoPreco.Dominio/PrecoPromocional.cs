@@ -14,7 +14,7 @@ namespace ImportacaoPreco.Dominio
             {
                 throw new ArgumentException("Não deve criar Preço promocional com valor invalido");
             }
-            if(dataFimPromocao < dataInicioPromocao || dataInicioPromocao < DateTime.Now)
+            if(dataFimPromocao < dataInicioPromocao || dataFimPromocao <= DateTime.Now)
             {
                 throw new ArgumentException("Não deve criar Preco promocional com Data invalida");
             }
