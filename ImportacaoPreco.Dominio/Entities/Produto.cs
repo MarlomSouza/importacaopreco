@@ -5,9 +5,9 @@ namespace ImportacaoPreco.Dominio.Entities
 {
     public class Produto : Entity<Produto>
     {
-        public readonly IEnumerable<Cor> Cores;
-        public readonly Subgrupo Subgrupo;
-        public readonly IEnumerable<Tamanho> Tamanhos;
+        public IEnumerable<Cor> Cores { get; private set; }
+        public Subgrupo Subgrupo { get; private set; }
+        public IEnumerable<Tamanho> Tamanhos { get; private set; }
         public readonly Preco Preco;
 
         protected Produto() { }

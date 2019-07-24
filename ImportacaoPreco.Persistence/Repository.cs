@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 
@@ -9,10 +11,7 @@ namespace ImportacaoPreco.Persistence
     {
         private readonly AppDbContext _context;
 
-        public Repository(AppDbContext context)
-        {
-            _context = context;
-        }
+        public Repository(AppDbContext context) => _context = context;
 
         public void Adicionar(TEntity entidade)
         {
@@ -41,6 +40,12 @@ namespace ImportacaoPreco.Persistence
         public IEnumerable<TEntity> ObterTodos()
         {
             var entidades = _context.Set<TEntity>().ToList();
+            return entidades.Any() ? entidades : new List<TEntity>();
+        }
+
+        public IEnumerable<TEntity> ObterTodos(Expression<Func<TEntity, bool>> predicate)
+        {
+            var entidades = _context.Set<TEntity>().Where(predicate).ToList();
             return entidades.Any() ? entidades : new List<TEntity>();
         }
     }
