@@ -17,7 +17,8 @@ namespace ImportacaoPreco.Aplicacao.Services
 
         public override void Criar(ProdutoDto entityDto)
         {
-            var tamanhos = _tamanhoRepository.ObterTodos(TamanhoPredicate.TamanhoSelecionado(entityDto.Tamanhos))
+            var tamanhos = _tamanhoRepository.ObterTodos(TamanhoPredicate.TamanhoSelecionado(entityDto.Tamanhos));
+
             var cores = new[] { new Cor("Branca") };
             var grupo = new Grupo("Grupo I");
             var subGrupo = new Subgrupo("Subgrupo I", grupo);

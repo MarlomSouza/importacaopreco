@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using ImportacaoPreco.Dominio.Entities;
 
 namespace ImportacaoPreco.Dominio.Base
@@ -8,7 +9,7 @@ namespace ImportacaoPreco.Dominio.Base
     {
         TEntidade ObterPorId(int id);
         IEnumerable<TEntidade> ObterTodos();
-        IEnumerable<TEntidade> ObterTodos(Predicate<TEntidade> predicate);
+        IEnumerable<TEntidade> ObterTodos(Expression<Func<TEntidade, bool>> predicate);
         void Adicionar(TEntidade entidade);
         void Alterar(TEntidade entidade);
         void Remover(TEntidade entidade);
