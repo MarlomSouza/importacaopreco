@@ -21,14 +21,13 @@ namespace ImportacaoPreco.TesteDeUnidade
             Assert.Equal(nome, grupo.Nome);
 
         }
+
         [Theory]
         [InlineData(null)]
         [InlineData("")]
         [InlineData(" ")]
         public void NaoDeveCriarGrupoComNomeInvalido(string nomeinvalido)
         {
-            //Given
-
             //When
             Func<object> testCode = () => new Grupo(nomeinvalido);
             //Then

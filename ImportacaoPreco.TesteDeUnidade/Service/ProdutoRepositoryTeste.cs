@@ -31,7 +31,7 @@ namespace ImportacaoPreco.TesteDeUnidade.Service
             using (var context = new AppDbContext(options))
             {
                 var _repository = new Repository<Tamanho>(context);
-                var tamanhos = _repository.ObterTodos(TamanhoPredicate.TamanhoSelecionado(tamanhosDesejado));
+                var tamanhos = _repository.ObterTodos(PredicateEntity.Contains<Tamanho>(tamanhosDesejado));
                 Assert.Collection(tamanhos, p => p = tamanhoGrande);
             }
         }

@@ -1,3 +1,4 @@
+using System.Linq;
 using ImportacaoPreco.Aplicacao.Dtos;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
@@ -9,21 +10,25 @@ namespace ImportacaoPreco.Aplicacao.Services
     public class ProdutoService : EntityService<Produto, ProdutoDto>, IEntityService<Produto, ProdutoDto>
     {
         private readonly IRepository<Tamanho> _tamanhoRepository;
+        private readonly IRepository<Cor> _corRepositorio;
+        private readonly IRepository<Subgrupo> _subgrupoRepositorio;
 
-        public ProdutoService(IRepository<Produto> repository, IRepository<Tamanho> tamanhoRepository) : base(repository)
+        public ProdutoService(IRepository<Produto> repository, IRepository<Tamanho> tamanhoRepository, IRepository<Cor> corRepositorio,
+                             IRepository<Subgrupo> subgrupoRepositorio) : base(repository)
         {
             _tamanhoRepository = tamanhoRepository;
+            _corRepositorio = corRepositorio;
+            _subgrupoRepositorio = subgrupoRepositorio;
         }
 
         public override void Criar(ProdutoDto entityDto)
         {
-            var tamanhos = _tamanhoRepository.ObterTodos(TamanhoPredicate.TamanhoSelecionado(entityDto.Tamanhos));
-
-            var cores = new[] { new Cor("Branca") };
-            var grupo = new Grupo("Grupo I");
-            var subGrupo = new Subgrupo("Subgrupo I", grupo);
-            var preco = new Preco(100);
-
+            var ids = PredicateEntity.Contains<Tamanho>(entityDto.Tamanhos);
+            var tamanhos = _tamanhoRepository.ObterTodos(ids);
+            var idCores = PredicateEntity.Contains<Cor>(entityDto.CorId);
+            var cores = _corRepositorio.ObterTodos(idCores);
+            var subGrupo = _subgrupoRepositorio.ObterPorId(entityDto.SubgrupoId);
+            var preco = new Preco(entityDto.Valor_Base);
             var produto = new Produto(entityDto.Nome, tamanhos, cores, subGrupo, preco);
             Criar(produto);
         }

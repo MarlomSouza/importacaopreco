@@ -4,6 +4,7 @@ using ImportacaoPreco.Aplicacao.Services;
 using ImportacaoPreco.Dominio.Base;
 using ImportacaoPreco.Dominio.Entities;
 using ImportacaoPreco.Persistence;
+using ImportacaoPreco.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +30,7 @@ namespace ImportacaoPreco.UI
             services.AddDbContext<AppDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IRepository<Produto>), typeof(Repository<Produto>));
+            services.AddScoped(typeof(IRepository<Produto>), typeof(ProdutoRepository));
             services.AddScoped(typeof(IRepository<Cor>), typeof(Repository<Cor>));
             services.AddScoped(typeof(IRepository<Tamanho>), typeof(Repository<Tamanho>));
             services.AddScoped(typeof(IRepository<Subgrupo>), typeof(Repository<Subgrupo>));

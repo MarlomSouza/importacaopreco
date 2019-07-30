@@ -9,7 +9,7 @@ namespace ImportacaoPreco.Persistence
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity<TEntity>
     {
-        private readonly AppDbContext _context;
+        protected readonly AppDbContext _context;
 
         public Repository(AppDbContext context) => _context = context;
 
@@ -25,10 +25,9 @@ namespace ImportacaoPreco.Persistence
             _context.SaveChanges();
         }
 
-        public TEntity ObterPorId(int id)
+        public virtual TEntity ObterPorId(int id)
         {
-            var query = _context.Set<TEntity>().Where(entity => entity.Id == id);
-            return query.Any() ? query.First() : null;
+            return _context.Set<TEntity>().Single(entity => entity.Id == id);
         }
 
         public void Remover(TEntity entidade)
@@ -37,13 +36,13 @@ namespace ImportacaoPreco.Persistence
             _context.SaveChanges();
         }
 
-        public IEnumerable<TEntity> ObterTodos()
+        public virtual IEnumerable<TEntity> ObterTodos()
         {
             var entidades = _context.Set<TEntity>().ToList();
             return entidades.Any() ? entidades : new List<TEntity>();
         }
 
-        public IEnumerable<TEntity> ObterTodos(Expression<Func<TEntity, bool>> predicate)
+        public virtual IEnumerable<TEntity> ObterTodos(Func<TEntity, bool> predicate)
         {
             var entidades = _context.Set<TEntity>().Where(predicate).ToList();
             return entidades.Any() ? entidades : new List<TEntity>();
