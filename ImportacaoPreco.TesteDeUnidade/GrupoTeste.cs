@@ -34,19 +34,18 @@ namespace ImportacaoPreco.TesteDeUnidade
             var mensagem = Assert.Throws<ArgumentException>(testCode).Message;
             Assert.Equal("Nome do Grupo inválido", mensagem);
         }
-
+        
         [Fact]
         public void DeveAdicionarSubGruposAoGrupo()
         {
             //Given
-            var grupo = new Grupo("Calçados");
-            var subgrupo = new Subgrupo("Chuteira", grupo);
+            var subgrupo = new Subgrupo("Chuteira");
             var subgruposEsperados = new List<Subgrupo>() { subgrupo };
+            var grupo = new Grupo("Calçados");
             //When
             grupo.AdicionaSubgrupo(subgrupo);
             //Then  
             Assert.Equal(subgruposEsperados, grupo.Subgrupo);
         }
-
     }
 }
