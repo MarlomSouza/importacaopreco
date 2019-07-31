@@ -10,6 +10,5 @@ namespace ImportacaoPreco.Dominio.Entities
             Nome = nome;
             Grupo = grupo;
         }
-
     }
 }
