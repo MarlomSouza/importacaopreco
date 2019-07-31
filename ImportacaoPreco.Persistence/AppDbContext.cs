@@ -1,4 +1,5 @@
 using ImportacaoPreco.Dominio.Entities;
+using ImportacaoPreco.Persistence.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace ImportacaoPreco.Persistence
@@ -13,6 +14,11 @@ namespace ImportacaoPreco.Persistence
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Subgrupo> Subgrupos { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+        }
 
     }
 }
