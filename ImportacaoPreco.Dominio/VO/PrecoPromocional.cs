@@ -1,6 +1,6 @@
 using System;
 
-namespace ImportacaoPreco.Dominio
+namespace ImportacaoPreco.Dominio.VO
 {
     public class PrecoPromocional
     {
@@ -8,16 +8,19 @@ namespace ImportacaoPreco.Dominio
         public DateTime DataInicioPromocao { get; private set; }
         public DateTime DataFimPromocao { get; private set; }
 
+        public bool EstaVigente
+        {
+            get => DateTime.Now >= DataInicioPromocao && DateTime.Now <= DataFimPromocao;
+        }
+
         public PrecoPromocional(decimal valor, DateTime dataInicioPromocao, DateTime dataFimPromocao)
         {
             if (valor <= 0)
-            {
                 throw new ArgumentException("Não deve criar Preço promocional com valor invalido");
-            }
-            if(dataFimPromocao < dataInicioPromocao || dataFimPromocao <= DateTime.Now)
-            {
+
+            if (dataFimPromocao < dataInicioPromocao || dataFimPromocao <= DateTime.Now)
                 throw new ArgumentException("Não deve criar Preco promocional com Data invalida");
-            }
+
             Valor = valor;
             DataInicioPromocao = dataInicioPromocao;
             DataFimPromocao = dataFimPromocao;

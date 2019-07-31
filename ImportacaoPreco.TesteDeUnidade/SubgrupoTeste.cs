@@ -1,39 +1,45 @@
-using System;
-using System.Collections.Generic;
-using ImportacaoPreco.Dominio;
+using ImportacaoPreco.Dominio.Entities;
 using Xunit;
 
 namespace ImportacaoPreco.TesteDeUnidade
 {
     public class SubgrupoTeste
     {
+        Grupo grupoValido = new Grupo("Sapatos");
+        const string nomeValido = "Tenis";
 
-        [Theory]
-        [InlineData("Chuteira")]
-        public void DeveCriarSubgrupoComNome(string nome)
+        [Fact]
+        public void DeveCriarSubGrupo()
         {
             //Given
-
+            const string nome = "Tenis";
             //When
-            var subgrupo = new Subgrupo(nome);
+            var subgrupo = new Subgrupo(nome, grupoValido);
             //Then
             Assert.Equal(nome, subgrupo.Nome);
         }
 
-        [Theory]
-        [InlineData("")]
-        [InlineData(" ")]
-        [InlineData(null)]
-        public void NaoDeveCriarSubgrupoComNomeInvalido(string nomeInvalido)
+
+        [Fact]
+        public void DeveCriarSubgrupoComGrupo()
         {
             //Given
-
+            var grupo = new Grupo("Roupa");
             //When
-            Action act = () => new Subgrupo(nomeInvalido);
+            var subgrupo = new Subgrupo(nomeValido, grupo);
             //Then
-            var mensagem = Assert.Throws<ArgumentException>(act).Message;
-            Assert.Equal("Nome do Subgrupo invalido", mensagem);
+            Assert.Equal(grupo, subgrupo.Grupo);
         }
 
+
+        // [Fact]
+        // public void NaoDeveCriarSubGrupoComNomeInvalido(string nomeInvalido)
+        // {
+        //     //Given
+
+        //     //When
+
+        //     //Then
+        // }
     }
 }

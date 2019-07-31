@@ -1,6 +1,6 @@
 using Xunit;
-using ImportacaoPreco.Dominio;
 using System;
+using ImportacaoPreco.Dominio.VO;
 
 namespace ImportacaoPreco.TesteDeUnidade
 {
@@ -34,6 +34,7 @@ namespace ImportacaoPreco.TesteDeUnidade
             var mensagem = Assert.Throws<ArgumentException>(act).Message;
             Assert.Equal("Não deve criar Preço promocional com valor invalido", mensagem);
         }
+
         [Fact]
         public void NaoDeveCriarPrecoPromocionalComDataInvalida()
         {

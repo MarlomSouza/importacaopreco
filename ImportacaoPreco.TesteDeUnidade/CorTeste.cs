@@ -1,5 +1,5 @@
 using System;
-using ImportacaoPreco.Dominio;
+using ImportacaoPreco.Dominio.Entities;
 using Xunit;
 
 namespace ImportacaoPreco.TesteDeUnidade
