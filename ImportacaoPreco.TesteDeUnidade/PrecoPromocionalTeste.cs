@@ -38,15 +38,15 @@ namespace ImportacaoPreco.TesteDeUnidade
         [Fact]
         public void NaoDeveCriarPrecoPromocionalComDataInvalida()
         {
-        //Given
-        var valor = 10;
-        var dataInicioPromocao = DateTime.Now;
-        var dataFimPromocao = DateTime.Now.AddDays(-10);
-        //When
-        Action act = () => new PrecoPromocional(valor, dataInicioPromocao, dataFimPromocao);
-        //Then
-        var mensagem = Assert.Throws<ArgumentException>(act).Message;
-        Assert.Equal("Não deve criar Preco promocional com Data invalida", mensagem);
+            //Given
+            var valor = 10;
+            var dataInicioPromocao = DateTime.Now;
+            var dataFimPromocao = DateTime.Now.AddDays(-10);
+            //When
+            Action act = () => new PrecoPromocional(valor, dataInicioPromocao, dataFimPromocao);
+            //Then
+            var mensagem = Assert.Throws<ArgumentException>(act).Message;
+            Assert.Equal("Não deve criar Preco promocional com Data invalida", mensagem);
         }
     }
 }

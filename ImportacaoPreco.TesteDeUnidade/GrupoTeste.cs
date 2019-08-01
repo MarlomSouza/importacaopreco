@@ -35,17 +35,17 @@ namespace ImportacaoPreco.TesteDeUnidade
             Assert.Equal("Nome do Grupo inválido", mensagem);
         }
         
-        [Fact]
-        public void DeveAdicionarSubGruposAoGrupo()
-        {
-            //Given
-            var subgrupo = new Subgrupo("Chuteira");
-            var subgruposEsperados = new List<Subgrupo>() { subgrupo };
-            var grupo = new Grupo("Calçados");
-            //When
-            grupo.AdicionaSubgrupo(subgrupo);
-            //Then  
-            Assert.Equal(subgruposEsperados, grupo.Subgrupo);
-        }
+        // [Fact]
+        // public void DeveAdicionarSubGruposAoGrupo()
+        // {
+        //     //Given
+        //     var subgrupo = new Subgrupo("Chuteira");
+        //     var subgruposEsperados = new List<Subgrupo>() { subgrupo };
+        //     var grupo = new Grupo("Calçados");
+        //     //When
+        //     grupo.AdicionaSubgrupo(subgrupo);
+        //     //Then  
+        //     Assert.Equal(subgruposEsperados, grupo.Subgrupo);
+        // }
     }
 }
