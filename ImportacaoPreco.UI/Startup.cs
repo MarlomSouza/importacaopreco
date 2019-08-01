@@ -32,13 +32,13 @@ namespace ImportacaoPreco.UI
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IRepository<Produto>), typeof(ProdutoRepository));
             services.AddScoped(typeof(IRepository<Cor>), typeof(Repository<Cor>));
-            services.AddScoped(typeof(IRepository<Tamanho>), typeof(Repository<Tamanho>));
+            // services.AddScoped(typeof(IRepository<Tamanho>), typeof(Repository<Tamanho>));
             services.AddScoped(typeof(IRepository<Subgrupo>), typeof(Repository<Subgrupo>));
             services.AddScoped(typeof(IRepository<Grupo>), typeof(Repository<Grupo>));
 
             services.AddScoped(typeof(IEntityService<Produto, ProdutoDto>), typeof(ProdutoService));
             services.AddScoped(typeof(IEntityService<Cor, CorDto>), typeof(CorService));
-            services.AddScoped(typeof(IEntityService<Tamanho, TamanhoDto>), typeof(TamanhoService));
+            // services.AddScoped(typeof(IEntityService<Tamanho, TamanhoDto>), typeof(TamanhoService));s
             services.AddScoped(typeof(IEntityService<Grupo, GrupoDto>), typeof(GrupoService));
             services.AddScoped(typeof(IEntityService<Subgrupo, SubgrupoDto>), typeof(SubgrupoService));
         }

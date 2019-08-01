@@ -49,6 +49,21 @@ namespace ImportacaoPreco.Persistence.Migrations
                     b.ToTable("Grupos");
                 });
 
+            modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Preco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<decimal>("ValorBase");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Precos");
+                });
+
             modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Produto", b =>
                 {
                     b.Property<int>("Id")
@@ -57,9 +72,13 @@ namespace ImportacaoPreco.Persistence.Migrations
 
                     b.Property<string>("Nome");
 
+                    b.Property<int?>("PrecoId");
+
                     b.Property<int?>("SubgrupoId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PrecoId");
 
                     b.HasIndex("SubgrupoId");
 
@@ -83,23 +102,6 @@ namespace ImportacaoPreco.Persistence.Migrations
                     b.ToTable("Subgrupos");
                 });
 
-            modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Tamanho", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Nome");
-
-                    b.Property<int?>("ProdutoId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProdutoId");
-
-                    b.ToTable("Tamanhos");
-                });
-
             modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Cor", b =>
                 {
                     b.HasOne("ImportacaoPreco.Dominio.Entities.Produto")
@@ -107,11 +109,59 @@ namespace ImportacaoPreco.Persistence.Migrations
                         .HasForeignKey("ProdutoId");
                 });
 
+            modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Preco", b =>
+                {
+                    b.OwnsMany("ImportacaoPreco.Dominio.VO.PrecoPromocional", "PrecosPromocionais", b1 =>
+                        {
+                            b1.Property<decimal>("Valor");
+
+                            b1.Property<DateTime>("DataInicioPromocao");
+
+                            b1.Property<DateTime>("DataFimPromocao");
+
+                            b1.Property<int>("PrecoId");
+
+                            b1.HasKey("Valor", "DataInicioPromocao", "DataFimPromocao");
+
+                            b1.HasIndex("PrecoId");
+
+                            b1.ToTable("PrecoPromocional");
+
+                            b1.HasOne("ImportacaoPreco.Dominio.Entities.Preco")
+                                .WithMany("PrecosPromocionais")
+                                .HasForeignKey("PrecoId")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+                });
+
             modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Produto", b =>
                 {
+                    b.HasOne("ImportacaoPreco.Dominio.Entities.Preco", "Preco")
+                        .WithMany()
+                        .HasForeignKey("PrecoId");
+
                     b.HasOne("ImportacaoPreco.Dominio.Entities.Subgrupo", "Subgrupo")
                         .WithMany()
                         .HasForeignKey("SubgrupoId");
+
+                    b.OwnsMany("ImportacaoPreco.Dominio.ValueObjects.Tamanho", "Tamanhos", b1 =>
+                        {
+                            b1.Property<string>("Nome")
+                                .ValueGeneratedOnAdd();
+
+                            b1.Property<int>("ProdutoId");
+
+                            b1.HasKey("Nome");
+
+                            b1.HasIndex("ProdutoId");
+
+                            b1.ToTable("Tamanho");
+
+                            b1.HasOne("ImportacaoPreco.Dominio.Entities.Produto")
+                                .WithMany("Tamanhos")
+                                .HasForeignKey("ProdutoId")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
                 });
 
             modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Subgrupo", b =>
@@ -119,13 +169,6 @@ namespace ImportacaoPreco.Persistence.Migrations
                     b.HasOne("ImportacaoPreco.Dominio.Entities.Grupo", "Grupo")
                         .WithMany("Subgrupo")
                         .HasForeignKey("GrupoId");
-                });
-
-            modelBuilder.Entity("ImportacaoPreco.Dominio.Entities.Tamanho", b =>
-                {
-                    b.HasOne("ImportacaoPreco.Dominio.Entities.Produto")
-                        .WithMany("Tamanhos")
-                        .HasForeignKey("ProdutoId");
                 });
 #pragma warning restore 612, 618
         }

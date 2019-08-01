@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ImportacaoPreco.Dominio.ValueObjects;
 using ImportacaoPreco.Dominio.VO;
 
 namespace ImportacaoPreco.Dominio.Entities
@@ -8,7 +9,7 @@ namespace ImportacaoPreco.Dominio.Entities
         public IEnumerable<Cor> Cores { get; private set; }
         public Subgrupo Subgrupo { get; private set; }
         public IEnumerable<Tamanho> Tamanhos { get; private set; }
-        public readonly Preco Preco;
+        public Preco Preco { get; private set; }
 
         protected Produto() { }
 

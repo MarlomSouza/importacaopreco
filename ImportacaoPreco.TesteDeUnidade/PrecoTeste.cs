@@ -1,4 +1,5 @@
 using System;
+using ImportacaoPreco.Dominio.Entities;
 using ImportacaoPreco.Dominio.VO;
 using Xunit;
 

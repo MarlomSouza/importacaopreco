@@ -8,8 +8,9 @@ namespace ImportacaoPreco.Persistence.Mappings
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
-            builder.HasMany(p => p.Tamanhos);
-            builder.HasMany(p => p.Cores);
+            builder.HasKey(p => p.Id);
+            builder.OwnsMany(p => p.Tamanhos, a => a.HasKey(t => t.Nome));
+
         }
     }
 }

@@ -10,14 +10,15 @@ namespace ImportacaoPreco.Persistence
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Cor> Cores { get; set; }
-        public DbSet<Tamanho> Tamanhos { get; set; }
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Subgrupo> Subgrupos { get; set; }
+        public DbSet<Preco> Precos { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new PrecoConfiguration());
         }
 
     }

@@ -2,7 +2,7 @@ using System;
 
 namespace ImportacaoPreco.Dominio.VO
 {
-    public class PrecoPromocional
+    public class PrecoPromocional : VO<PrecoPromocional>
     {
         public decimal Valor { get; private set; }
         public DateTime DataInicioPromocao { get; private set; }
@@ -24,6 +24,11 @@ namespace ImportacaoPreco.Dominio.VO
             Valor = valor;
             DataInicioPromocao = dataInicioPromocao;
             DataFimPromocao = dataFimPromocao;
+        }
+
+        public override bool EqualsCore(PrecoPromocional outro)
+        {
+            throw new NotImplementedException();
         }
     }
 }

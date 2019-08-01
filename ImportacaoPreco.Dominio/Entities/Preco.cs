@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ImportacaoPreco.Dominio.VO;
 
-namespace ImportacaoPreco.Dominio.VO
+namespace ImportacaoPreco.Dominio.Entities
 {
-    public class Preco
+    public class Preco : Entity<Preco>
     {
-        public readonly decimal ValorBase;
+        public decimal ValorBase { get; private set; }
         private IList<PrecoPromocional> precosPromocionais;
+        public IEnumerable<PrecoPromocional> PrecosPromocionais => precosPromocionais;
         public decimal Valor()
         {
             if (!precosPromocionais.Any())
@@ -16,8 +18,6 @@ namespace ImportacaoPreco.Dominio.VO
             var precoPromocional = precosPromocionais.FirstOrDefault(p => p.EstaVigente);
             return precoPromocional.Valor;
         }
-
-        public IEnumerable<PrecoPromocional> PrecosPromocionais => precosPromocionais;
 
         public Preco(decimal valorBase)
         {
@@ -40,7 +40,5 @@ namespace ImportacaoPreco.Dominio.VO
             return precoPromocional.DataInicioPromocao >= precoExistente.DataInicioPromocao && precoPromocional.DataInicioPromocao <= precoExistente.DataFimPromocao ||
                    precoPromocional.DataInicioPromocao >= precoExistente.DataFimPromocao && precoPromocional.DataFimPromocao <= precoExistente.DataFimPromocao;
         }
-
-
     }
 }
