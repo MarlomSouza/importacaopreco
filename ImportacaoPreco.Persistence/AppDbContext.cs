@@ -9,9 +9,7 @@ namespace ImportacaoPreco.Persistence
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Cor> Cores { get; set; }
         public DbSet<Grupo> Grupos { get; set; }
-        public DbSet<Subgrupo> Subgrupos { get; set; }
         public DbSet<Preco> Precos { get; set; }
 
 
@@ -19,6 +17,7 @@ namespace ImportacaoPreco.Persistence
         {
             modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
             modelBuilder.ApplyConfiguration(new PrecoConfiguration());
+            modelBuilder.ApplyConfiguration(new GrupoConfiguration());
         }
 
     }

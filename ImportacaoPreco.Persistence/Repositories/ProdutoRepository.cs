@@ -10,6 +10,6 @@ namespace ImportacaoPreco.Persistence.Repositories
         public ProdutoRepository(AppDbContext context) : base(context) { }
 
         public override Produto ObterPorId(int id) =>
-        _context.Produtos.Include(p => p.Tamanhos).Include(p => p.Cores).Include(p => p.Subgrupo.Grupo).Single(p => p.Id == id);
+        _context.Produtos.Include(p => p.Tamanhos).Include(p => p.Cores).Include(p => p.Subgrupo).Single(p => p.Id == id);
     }
 }

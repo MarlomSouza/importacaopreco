@@ -1,9 +1,11 @@
 using System;
+using ImportacaoPreco.Dominio.VO;
 
-namespace ImportacaoPreco.Dominio.Entities
+namespace ImportacaoPreco.Dominio.ValueObjects
 {
-    public class Cor : Entity<Cor>
+    public class Cor : VO<Cor>
     {
+        public string Nome { get; private set; }
         protected Cor() { }
 
         public Cor(string nome)
@@ -13,5 +15,7 @@ namespace ImportacaoPreco.Dominio.Entities
 
             Nome = nome;
         }
+
+        public override bool EqualsCore(Cor outro) => Nome == outro.Nome;
     }
 }

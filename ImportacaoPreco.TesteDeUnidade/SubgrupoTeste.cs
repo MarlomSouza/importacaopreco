@@ -1,4 +1,5 @@
 using ImportacaoPreco.Dominio.Entities;
+using ImportacaoPreco.Dominio.ValueObjects;
 using Xunit;
 
 namespace ImportacaoPreco.TesteDeUnidade

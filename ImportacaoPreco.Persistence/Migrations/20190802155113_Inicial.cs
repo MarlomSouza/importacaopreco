@@ -36,26 +36,6 @@ namespace ImportacaoPreco.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Subgrupos",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    GrupoId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Subgrupos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Subgrupos_Grupos_GrupoId",
-                        column: x => x.GrupoId,
-                        principalTable: "Grupos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "PrecoPromocional",
                 columns: table => new
                 {
@@ -82,7 +62,6 @@ namespace ImportacaoPreco.Persistence.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(nullable: true),
-                    SubgrupoId = table.Column<int>(nullable: true),
                     PrecoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -94,32 +73,49 @@ namespace ImportacaoPreco.Persistence.Migrations
                         principalTable: "Precos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Produtos_Subgrupos_SubgrupoId",
-                        column: x => x.SubgrupoId,
-                        principalTable: "Subgrupos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cores",
+                name: "Cor",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    ProdutoId = table.Column<int>(nullable: true)
+                    Nome = table.Column<string>(nullable: false),
+                    ProdutoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cores", x => x.Id);
+                    table.PrimaryKey("PK_Cor", x => x.Nome);
                     table.ForeignKey(
-                        name: "FK_Cores_Produtos_ProdutoId",
+                        name: "FK_Cor_Produtos_ProdutoId",
                         column: x => x.ProdutoId,
                         principalTable: "Produtos",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subgrupo",
+                columns: table => new
+                {
+                    ProdutoId = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    GrupoId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subgrupo", x => x.ProdutoId);
+                    table.ForeignKey(
+                        name: "FK_Subgrupo_Grupos_GrupoId",
+                        column: x => x.GrupoId,
+                        principalTable: "Grupos",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Subgrupo_Produtos_ProdutoId",
+                        column: x => x.ProdutoId,
+                        principalTable: "Produtos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -141,8 +137,8 @@ namespace ImportacaoPreco.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cores_ProdutoId",
-                table: "Cores",
+                name: "IX_Cor_ProdutoId",
+                table: "Cor",
                 column: "ProdutoId");
 
             migrationBuilder.CreateIndex(
@@ -156,13 +152,8 @@ namespace ImportacaoPreco.Persistence.Migrations
                 column: "PrecoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Produtos_SubgrupoId",
-                table: "Produtos",
-                column: "SubgrupoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Subgrupos_GrupoId",
-                table: "Subgrupos",
+                name: "IX_Subgrupo_GrupoId",
+                table: "Subgrupo",
                 column: "GrupoId");
 
             migrationBuilder.CreateIndex(
@@ -174,25 +165,25 @@ namespace ImportacaoPreco.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Cores");
+                name: "Cor");
 
             migrationBuilder.DropTable(
                 name: "PrecoPromocional");
 
             migrationBuilder.DropTable(
+                name: "Subgrupo");
+
+            migrationBuilder.DropTable(
                 name: "Tamanho");
+
+            migrationBuilder.DropTable(
+                name: "Grupos");
 
             migrationBuilder.DropTable(
                 name: "Produtos");
 
             migrationBuilder.DropTable(
                 name: "Precos");
-
-            migrationBuilder.DropTable(
-                name: "Subgrupos");
-
-            migrationBuilder.DropTable(
-                name: "Grupos");
         }
     }
 }

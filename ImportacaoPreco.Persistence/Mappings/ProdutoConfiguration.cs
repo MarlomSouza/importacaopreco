@@ -9,7 +9,9 @@ namespace ImportacaoPreco.Persistence.Mappings
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
             builder.HasKey(p => p.Id);
-            builder.OwnsMany(p => p.Tamanhos, a => a.HasKey(t => t.Nome));
+            builder.OwnsMany(p => p.Tamanhos, t => t.HasKey(x => x.Nome));
+            builder.OwnsMany(p => p.Cores, c => c.HasKey(x => x.Nome));
+            builder.OwnsOne(p => p.Subgrupo, sb => sb.ToTable("Subgrupo"));
 
         }
     }
