@@ -26,9 +26,8 @@ namespace ImportacaoPreco.Dominio.VO
             DataFimPromocao = dataFimPromocao;
         }
 
-        public override bool EqualsCore(PrecoPromocional outro)
-        {
-            throw new NotImplementedException();
-        }
+        public override bool EqualsCore(PrecoPromocional outro) 
+            => Valor == outro.Valor && DataInicioPromocao == outro.DataInicioPromocao && DataFimPromocao == outro.DataFimPromocao;
+
     }
 }

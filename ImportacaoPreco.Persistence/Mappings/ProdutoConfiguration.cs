@@ -10,6 +10,7 @@ namespace ImportacaoPreco.Persistence.Mappings
         {
             builder.HasKey(p => p.Id);
             builder.OwnsMany(p => p.Tamanhos, t => t.HasKey(x => x.Nome));
+            builder.OwnsMany(p => p.PrecosPromocionais, t => t.Property(pp => pp.Valor).HasColumnName("Valor"));
             builder.OwnsMany(p => p.Cores, c => c.HasKey(x => x.Nome));
             builder.OwnsOne(p => p.Subgrupo, sb => sb.ToTable("Subgrupo"));
 

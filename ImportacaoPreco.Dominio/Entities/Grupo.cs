@@ -6,6 +6,7 @@ namespace ImportacaoPreco.Dominio.Entities
 {
     public class Grupo : Entity<Grupo>
     {
+        public string Nome { get; protected set; }
         public IList<Subgrupo> Subgrupo { get; private set; }
 
         protected Grupo() { }
