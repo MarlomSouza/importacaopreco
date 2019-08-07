@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ImportacaoPreco.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190807105523_Inicial")]
+    [Migration("20190807161231_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

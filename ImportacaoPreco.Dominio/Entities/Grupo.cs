@@ -7,8 +7,7 @@ namespace ImportacaoPreco.Dominio.Entities
     public class Grupo : Entity<Grupo>
     {
         public string Nome { get; protected set; }
-        public IList<Subgrupo> Subgrupo { get; private set; }
-
+        public ICollection<Subgrupo> Subgrupos { get; private set; }
         protected Grupo() { }
 
         public Grupo(string nome)
@@ -16,11 +15,10 @@ namespace ImportacaoPreco.Dominio.Entities
             if (string.IsNullOrWhiteSpace(nome))
                 throw new ArgumentException("Nome do Grupo inválido");
             Nome = nome;
-            Subgrupo = new List<Subgrupo>();
-
+            Subgrupos = new List<Subgrupo>();
         }
 
-        public void AdicionaSubgrupo(Subgrupo subgrupo) => Subgrupo.Add(subgrupo);
+        public void AdicionaSubgrupo(Subgrupo subgrupo) => Subgrupos.Add(subgrupo);
 
     }
 
