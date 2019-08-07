@@ -20,8 +20,8 @@ namespace ImportacaoPreco.Aplicacao.Services
             var tamanhos = MapeadorDeTamanho(entityDto.Tamanhos);
             var cores = MapeadorDeCor(entityDto.Cores);
             var subGrupo = new Subgrupo("Tenis", new Grupo("Calcaçado"));
-            var preco = entityDto.Valor_Base;
-            var precoPromocinal = new PrecoPromocional(preco * random.Next(), DateTime.Now, DateTime.Now.AddDays(1));
+            var preco = entityDto.Valor_Base * random.Next(10);
+            var precoPromocinal = new PrecoPromocional(preco * random.Next(5), DateTime.Now, DateTime.Now.AddDays(random.Next(10)));
             var precosPromocionais = new[] { precoPromocinal };
             var produto = new Produto(entityDto.Nome, tamanhos, cores, subGrupo, preco, precosPromocionais);
             Criar(produto);

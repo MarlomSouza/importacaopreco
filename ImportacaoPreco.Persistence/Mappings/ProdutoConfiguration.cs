@@ -9,11 +9,32 @@ namespace ImportacaoPreco.Persistence.Mappings
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
             builder.HasKey(p => p.Id);
-            builder.OwnsMany(p => p.Tamanhos, t => t.HasKey(x => x.Nome));
-            builder.OwnsMany(p => p.PrecosPromocionais, t => t.Property(pp => pp.Valor).HasColumnName("Valor"));
-            builder.OwnsMany(p => p.Cores, c => c.HasKey(x => x.Nome));
-            builder.OwnsOne(p => p.Subgrupo, sb => sb.ToTable("Subgrupo"));
+            builder.OwnsMany(p => p.Tamanhos, t =>
+            {
+                t.HasForeignKey("ProdutoId");
+                t.HasKey("ProdutoId", "Nome");
 
+            });
+            builder.OwnsMany(p => p.PrecosPromocionais, pp =>
+            {
+                pp.Property(x => x.Valor);
+                pp.Property(x => x.DataInicioPromocao);
+                pp.Property(x => x.DataFimPromocao);
+                pp.HasKey("Valor", "DataInicioPromocao", "DataFimPromocao");
+            });
+
+            builder.OwnsMany(p => p.Cores, c =>
+            {
+                c.HasForeignKey("ProdutoId");
+                c.HasKey("ProdutoId", "Nome");
+            });
+
+            builder.OwnsOne(p => p.Subgrupo, sb =>
+            {
+                sb.HasForeignKey("ProdutoId");
+                sb.HasKey("ProdutoId", "Nome");
+                sb.ToTable("Subgrupos");
+            });
         }
     }
 }

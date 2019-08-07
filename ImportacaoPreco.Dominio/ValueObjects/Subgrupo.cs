@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ImportacaoPreco.Dominio.Entities;
 using ImportacaoPreco.Dominio.VO;
 

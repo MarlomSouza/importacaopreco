@@ -13,7 +13,7 @@ namespace ImportacaoPreco.Dominio.Entities
         public Subgrupo Subgrupo { get; private set; }
         public IEnumerable<Tamanho> Tamanhos { get; private set; }
         public decimal Preco { get; private set; }
-        private IList<PrecoPromocional> _precosPromocionais;
+        private ICollection<PrecoPromocional> _precosPromocionais;
         public IEnumerable<PrecoPromocional> PrecosPromocionais => _precosPromocionais;
 
         protected Produto() { }

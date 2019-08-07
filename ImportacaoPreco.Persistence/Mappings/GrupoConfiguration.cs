@@ -8,7 +8,9 @@ namespace ImportacaoPreco.Persistence.Mappings
     {
         public void Configure(EntityTypeBuilder<Grupo> builder)
         {
-            builder.OwnsMany(g => g.Subgrupo, a => a.HasKey(sb => sb.Nome));
+            builder.Ignore(g => g.Subgrupo);
+
+            // builder.HasMany(p => p.Subgrupo).WithOne(x => x.Grupo);
         }
     }
 }
